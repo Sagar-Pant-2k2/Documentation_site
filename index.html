@@ -1,31 +1,464 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tribute-page</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <main id="main">
-        <div id="head_part">
-            <div id="title"><h1>Swami Vivekananda</h1></div>
-        </div>
-        <div id="img-div">
-            <div id="image"><center><img src="data:image/jpeg;base64,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"   ></image></div></center></div>
-            <div id="img-caption" style="width: 100%"><center>Swami Vivekananda portrait</center></div>
-        </div>
-        <div id="tribute-info">
-            Swami Vivekananda, born Narendranath Datta, was an Indian Hindu monk, philosopher, author, religious teacher, and the chief disciple of the Indian mystic Ramakrishna.
-            He was a key figure in the introduction of Vedanta and Yoga to the Western world;[6][7][8] and is credited with raising interfaith awareness, and bringing Hinduism to the status of a major world religion.[9] Vivekananda became a popular figure after the 1893 Parliament of Religions in Chicago, where he began his famous speech with the words, "Sisters and brothers of America...," before introducing Hinduism to Americans.[10][11] He was so impactful at the Parliament that an American newspaper described him as, “an orator by divine right and undoubtedly the greatest figure at the Parliament”.[12] After great success at the Parliament, in the subsequent years, Vivekananda delivered hundreds of lectures across the United States, England and Europe, disseminating the core tenets of Hindu philosophy, and founded the Vedanta Society of New York and the Vedanta Society of San Francisco (now Vedanta Society of Northern California),[13] both of which became the foundations for Vedanta Societies in Western world.
-            <br> <br>
-            &nbsp &nbsp &nbsp
-            Born into an aristocratic Bengali Kayastha family in Calcutta, Vivekananda was inclined from a young age towards religion and spirituality. He later found his guru, Ramakrishna, and became a monk. After the death of Ramakrishna, Vivekananda extensively toured the Indian subcontinent, acquiring first-hand knowledge of the living conditions of Indian people in then British India. Moved by their plight, he resolved to help his country men, and found a way to travel to the United States, where he was highly successful. In India, Vivekananda founded the Ramakrishna Math, which provides spiritual training for monastics and householder devotees, and the Ramakrishna Mission, to provide charity, social work and education.[7] Vivekananda was also a major force in contemporary Hindu reform movements, and contributed to the concept of nationalism in colonial India.[14] He is regarded as a patriotic saint, and his birthday in India is celebrated as National Youth Day
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="whole">
+    <div id="navi">
+    <nav id="navbar">
+      <header>JS Documentation</header>
+      <ul>
+        <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+        <li>
+          <a class="nav-link" href="#What_you_should_already_know"
+            >What you should already know</a
+          >
+        </li>
+        <li>
+          <a class="nav-link" href="#JavaScript_and_Java"
+            >JavaScript and Java</a
+          >
+        </li>
+        <li><a class="nav-link" href="#Hello_world">Hello world</a></li>
+        <li><a class="nav-link" href="#Variables">Variables</a></li>
+        <li>
+          <a class="nav-link" href="#Declaring_variables"
+            >Declaring variables</a
+          >
+        </li>
+        <li><a class="nav-link" href="#Variable_scope">Variable scope</a></li>
+        <li>
+          <a class="nav-link" href="#Global_variables">Global variables</a>
+        </li>
+        <li><a class="nav-link" href="#Constants">Constants</a></li>
+        <li><a class="nav-link" href="#Data_types">Data types</a></li>
+        <li>
+          <a class="nav-link" href="#if...else_statement"
+            >if...else statement</a
+          >
+        </li>
+        <li><a class="nav-link" href="#while_statement">while statement</a></li>
+        <li>
+          <a class="nav-link" href="#Function_declarations"
+            >Function declarations</a
+          >
+        </li>
+        <li><a class="nav-link" href="#Reference">Reference</a></li>
+      </ul>
+    </nav>
+    </div>
+    <div id="component">
+    <main id="main-doc">
+      <section class="main-section" id="Introduction">
+        <header>Introduction</header>
+        <article>
+          <p>
+            JavaScript is a cross-platform, object-oriented scripting language.
+            It is a small and lightweight language. Inside a host environment
+            (for example, a web browser), JavaScript can be connected to the
+            objects of its environment to provide programmatic control over
+            them.
+          </p>
 
-        </div>
-        <center><a id="tribute-link" target="_blank" href="https://en.wikipedia.org/wiki/Swami_Vivekananda">More about Swami_Vivekananda</a></center>
-        
-    </main>
-</body>
+          <p>
+            JavaScript contains a standard library of objects, such as Array,
+            Date, and Math, and a core set of language elements such as
+            operators, control structures, and statements. Core JavaScript can
+            be extended for a variety of purposes by supplementing it with
+            additional objects; for example:
+          </p>
+          <ul>
+            <li>
+              Client-side JavaScript extends the core language by supplying
+              objects to control a browser and its Document Object Model (DOM).
+              For example, client-side extensions allow an application to place
+              elements on an HTML form and respond to user events such as mouse
+              clicks, form input, and page navigation.
+            </li>
+            <li>
+              Server-side JavaScript extends the core language by supplying
+              objects relevant to running JavaScript on a server. For example,
+              server-side extensions allow an application to communicate with a
+              database, provide continuity of information from one invocation to
+              another of the application, or perform file manipulations on a
+              server.
+            </li>
+          </ul>
+        </article>
+      </section>
+      <section class="main-section" id="What_you_should_already_know">
+        <header>What you should already know</header>
+        <article>
+          <p>This guide assumes you have the following basic background:</p>
+
+          <ul>
+            <li>
+              A general understanding of the Internet and the World Wide Web
+              (WWW).
+            </li>
+            <li>Good working knowledge of HyperText Markup Language (HTML).</li>
+            <li>
+              Some programming experience. If you are new to programming, try
+              one of the tutorials linked on the main page about JavaScript.
+            </li>
+          </ul>
+        </article>
+      </section>
+      <section class="main-section" id="JavaScript_and_Java">
+        <header>JavaScript and Java</header>
+        <article>
+          <p>
+            JavaScript and Java are similar in some ways but fundamentally
+            different in some others. The JavaScript language resembles Java but
+            does not have Java's static typing and strong type checking.
+            JavaScript follows most Java expression syntax, naming conventions
+            and basic control-flow constructs which was the reason why it was
+            renamed from LiveScript to JavaScript.
+          </p>
+
+          <p>
+            In contrast to Java's compile-time system of classes built by
+            declarations, JavaScript supports a runtime system based on a small
+            number of data types representing numeric, Boolean, and string
+            values. JavaScript has a prototype-based object model instead of the
+            more common class-based object model. The prototype-based model
+            provides dynamic inheritance; that is, what is inherited can vary
+            for individual objects. JavaScript also supports functions without
+            any special declarative requirements. Functions can be properties of
+            objects, executing as loosely typed methods.
+          </p>
+          <p>
+            JavaScript is a very free-form language compared to Java. You do not
+            have to declare all variables, classes, and methods. You do not have
+            to be concerned with whether methods are public, private, or
+            protected, and you do not have to implement interfaces. Variables,
+            parameters, and function return types are not explicitly typed.
+          </p>
+        </article>
+      </section>
+      <section class="main-section" id="Hello_world">
+        <header>Hello world</header>
+        <article>
+          To get started with writing JavaScript, open the Scratchpad and write
+          your first "Hello world" JavaScript code:
+          <code
+            >function greetMe(yourName) { alert("Hello " + yourName); }
+            greetMe("World");
+          </code>
+
+          Select the code in the pad and hit Ctrl+R to watch it unfold in your
+          browser!
+        </article>
+      </section>
+      <section class="main-section" id="Variables">
+        <header>Variables</header>
+        <p>
+          You use variables as symbolic names for values in your application.
+          The names of variables, called identifiers, conform to certain rules.
+        </p>
+        <p>
+          A JavaScript identifier must start with a letter, underscore (_), or
+          dollar sign ($); subsequent characters can also be digits (0-9).
+          Because JavaScript is case sensitive, letters include the characters
+          "A" through "Z" (uppercase) and the characters "a" through "z"
+          (lowercase).
+        </p>
+        <p>
+          You can use ISO 8859-1 or Unicode letters such as å and ü in
+          identifiers. You can also use the Unicode escape sequences as
+          characters in identifiers. Some examples of legal names are
+          Number_hits, temp99, and _name.
+        </p>
+      </section>
+      <section class="main-section" id="Declaring_variables">
+        <header>Declaring variables</header>
+        <article>
+          You can declare a variable in three ways:
+          <p>
+            With the keyword var. For example, <code>var x = 42.</code> This
+            syntax can be used to declare both local and global variables.
+          </p>
+          <p>
+            By simply assigning it a value. For example,
+            <code>x = 42.</code> This always declares a global variable. It
+            generates a strict JavaScript warning. You shouldn't use this
+            variant.
+          </p>
+          <p>
+            With the keyword let. For example,<code> let y = 13.</code> This
+            syntax can be used to declare a block scope local variable. See
+            Variable scope below.
+          </p>
+        </article>
+      </section>
+      <section class="main-section" id="Variable_scope">
+        <header>Variable scope</header>
+        <article>
+          <p>
+            When you declare a variable outside of any function, it is called a
+            global variable, because it is available to any other code in the
+            current document. When you declare a variable within a function, it
+            is called a local variable, because it is available only within that
+            function.
+          </p>
+
+          <p>
+            JavaScript before ECMAScript 2015 does not have block statement
+            scope; rather, a variable declared within a block is local to the
+            function (or global scope) that the block resides within. For
+            example the following code will log 5, because the scope of x is the
+            function (or global context) within which x is declared, not the
+            block, which in this case is an if statement.
+          </p>
+          <code>if (true) { var x = 5; } console.log(x); // 5</code>
+          <p>
+            This behavior changes, when using the let declaration introduced in
+            ECMAScript 2015.
+          </p>
+
+          <code
+            >if (true) { let y = 5; } console.log(y); // ReferenceError: y is
+            not defined</code
+          >
+        </article>
+      </section>
+      <section class="main-section" id="Global_variables">
+        <header>Global variables</header>
+        <article>
+          <p>
+            Global variables are in fact properties of the global object. In web
+            pages the global object is window, so you can set and access global
+            variables using the window.variable syntax.
+          </p>
+
+          <p>
+            Consequently, you can access global variables declared in one window
+            or frame from another window or frame by specifying the window or
+            frame name. For example, if a variable called phoneNumber is
+            declared in a document, you can refer to this variable from an
+            iframe as parent.phoneNumber.
+          </p>
+        </article>
+      </section>
+      <section class="main-section" id="Constants">
+        <header>Constants</header>
+        <article>
+          <p>
+            You can create a read-only, named constant with the const keyword.
+            The syntax of a constant identifier is the same as for a variable
+            identifier: it must start with a letter, underscore or dollar sign
+            and can contain alphabetic, numeric, or underscore characters.
+          </p>
+
+          <code>const PI = 3.14;</code>
+          <p>
+            A constant cannot change value through assignment or be re-declared
+            while the script is running. It has to be initialized to a value.
+          </p>
+
+          <p>
+            The scope rules for constants are the same as those for let block
+            scope variables. If the const keyword is omitted, the identifier is
+            assumed to represent a variable.
+          </p>
+
+          <p>
+            You cannot declare a constant with the same name as a function or
+            variable in the same scope. For example:
+          </p>
+
+          <code
+            >// THIS WILL CAUSE AN ERROR function f() {}; const f = 5; // THIS
+            WILL CAUSE AN ERROR ALSO function f() { const g = 5; var g;
+            //statements }</code
+          >
+          However, object attributes are not protected, so the following
+          statement is executed without problems.
+          <code
+            >const MY_OBJECT = {"key": "value"}; MY_OBJECT.key =
+            "otherValue";</code
+          >
+        </article>
+      </section>
+      <section class="main-section" id="Data_types">
+        <header>Data types</header>
+        <article>
+          <p>The latest ECMAScript standard defines seven data types:</p>
+          <ul>
+            <li>
+              <p>Six data types that are primitives:</p>
+              <ul>
+                <li>Boolean. true and false.</li>
+                <li>
+                  null. A special keyword denoting a null value. Because
+                  JavaScript is case-sensitive, null is not the same as Null,
+                  NULL, or any other variant.
+                </li>
+                <li>
+                  undefined. A top-level property whose value is undefined.
+                </li>
+                <li>Number. 42 or 3.14159.</li>
+                <li>String. "Howdy"</li>
+                <li>
+                  Symbol (new in ECMAScript 2015). A data type whose instances
+                  are unique and immutable.
+                </li>
+              </ul>
+            </li>
+
+            <li>and Object</li>
+          </ul>
+          Although these data types are a relatively small amount, they enable
+          you to perform useful functions with your applications. Objects and
+          functions are the other fundamental elements in the language. You can
+          think of objects as named containers for values, and functions as
+          procedures that your application can perform.
+        </article>
+      </section>
+      <section class="main-section" id="if...else_statement">
+        <header>if...else statement</header>
+        <article>
+          Use the if statement to execute a statement if a logical condition is
+          true. Use the optional else clause to execute a statement if the
+          condition is false. An if statement looks as follows:
+
+          <code>if (condition) { statement_1; } else { statement_2; }</code>
+          condition can be any expression that evaluates to true or false. See
+          Boolean for an explanation of what evaluates to true and false. If
+          condition evaluates to true, statement_1 is executed; otherwise,
+          statement_2 is executed. statement_1 and statement_2 can be any
+          statement, including further nested if statements.
+          <p>
+            You may also compound the statements using else if to have multiple
+            conditions tested in sequence, as follows:
+          </p>
+          <code
+            >if (condition_1) { statement_1; } else if (condition_2) {
+            statement_2; } else if (condition_n) { statement_n; } else {
+            statement_last; }
+          </code>
+          In the case of multiple conditions only the first logical condition
+          which evaluates to true will be executed. To execute multiple
+          statements, group them within a block statement ({ ... }) . In
+          general, it's good practice to always use block statements, especially
+          when nesting if statements:
+
+          <code
+            >if (condition) { statement_1_runs_if_condition_is_true;
+            statement_2_runs_if_condition_is_true; } else {
+            statement_3_runs_if_condition_is_false;
+            statement_4_runs_if_condition_is_false; }</code
+          >
+          It is advisable to not use simple assignments in a conditional
+          expression, because the assignment can be confused with equality when
+          glancing over the code. For example, do not use the following code:
+          <code>if (x = y) { /* statements here */ }</code> If you need to use
+          an assignment in a conditional expression, a common practice is to put
+          additional parentheses around the assignment. For example:
+
+          <code>if ((x = y)) { /* statements here */ }</code>
+        </article>
+      </section>
+      <section class="main-section" id="while_statement">
+        <header>while statement</header>
+        <article>
+          A while statement executes its statements as long as a specified
+          condition evaluates to true. A while statement looks as follows:
+
+          <code>while (condition) statement</code> If the condition becomes
+          false, statement within the loop stops executing and control passes to
+          the statement following the loop.
+
+          <p>
+            The condition test occurs before statement in the loop is executed.
+            If the condition returns true, statement is executed and the
+            condition is tested again. If the condition returns false, execution
+            stops and control is passed to the statement following while.
+          </p>
+
+          <p>
+            To execute multiple statements, use a block statement ({ ... }) to
+            group those statements.
+          </p>
+
+          Example:
+
+          <p>
+            The following while loop iterates as long as n is less than three:
+          </p>
+
+          <code>var n = 0; var x = 0; while (n &lt; 3) { n++; x += n; }</code>
+          <p>
+            With each iteration, the loop increments n and adds that value to x.
+            Therefore, x and n take on the following values:
+          </p>
+
+          <ul>
+            <li>After the first pass: n = 1 and x = 1</li>
+            <li>After the second pass: n = 2 and x = 3</li>
+            <li>After the third pass: n = 3 and x = 6</li>
+          </ul>
+          <p>
+            After completing the third pass, the condition n &lt; 3 is no longer
+            true, so the loop terminates.
+          </p>
+        </article>
+      </section>
+      <section class="main-section" id="Function_declarations">
+        <header>Function declarations</header>
+        <article>
+          A function definition (also called a function declaration, or function
+          statement) consists of the function keyword, followed by:
+
+          <ul>
+            <li>The name of the function.</li>
+            <li>
+              A list of arguments to the function, enclosed in parentheses and
+              separated by commas.
+            </li>
+            <li>
+              The JavaScript statements that define the function, enclosed in
+              curly brackets, { }.
+            </li>
+          </ul>
+          <p>
+            For example, the following code defines a simple function named
+            square:
+          </p>
+
+          <code>function square(number) { return number * number; }</code>
+          <p>
+            The function square takes one argument, called number. The function
+            consists of one statement that says to return the argument of the
+            function (that is, number) multiplied by itself. The return
+            statement specifies the value returned by the function.
+          </p>
+          <code>return number * number;</code>
+          <p>
+            Primitive parameters (such as a number) are passed to functions by
+            value; the value is passed to the function, but if the function
+            changes the value of the parameter, this change is not reflected
+            globally or in the calling function.
+          </p>
+        </article>
+      </section>
+      <section class="main-section" id="Reference">
+        <header>Reference</header>
+        <article>
+          <ul>
+            <li>
+              All the documentation in this page is taken from
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
+                target="_blank"
+                >MDN</a
+              >
+            </li>
+          </ul>
+        </article>
+      </section>
+    </main></div>
+    </div>
+  </body>
 </html>
